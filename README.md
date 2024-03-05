@@ -1,6 +1,6 @@
 # Developing a Neural Network Classification Model
-### Name: Anbuselvan.S
-### Reference No: 212223240008
+### Name: V RAKSHA DHARANIKA
+### Reference No: 212223230167
 
 ## AIM:
 To develop a neural network classification model for the given dataset.
@@ -12,7 +12,7 @@ You are required to help the manager to predict the right group of the new custo
 
 ## Neural Network Model:
 
-![Screenshot 2024-03-01 091630](https://github.com/anbuselvan1519/nn-classification/assets/139841744/dfa9e381-19a3-4474-8e7f-3193912f86f0)
+
 
 ## DESIGN STEPS:
 
@@ -42,10 +42,11 @@ Using the DL model predict for some random inputs.
 
 ## PROGRAM:
 
-### Name: Anbuselvan.S
-### Register Number:212223240008
+### Name: V RAKSHA DHARANIKA
+### Register Number:212223230167
 
 ```
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.models import Sequential
@@ -65,7 +66,7 @@ from sklearn.metrics import classification_report,confusion_matrix
 import numpy as np
 import matplotlib.pylab as plt
 
-customer_df = pd.read_csv('/content/customers.csv')
+customer_df = pd.read_csv('/content/drive/MyDrive/data set/customers.csv')
 
 customer_df.columns
 customer_df.dtypes
@@ -154,61 +155,64 @@ X_train_scaled[:,2] = scaler_age.transform(X_train[:,2].reshape(-1,1)).reshape(-
 X_test_scaled[:,2] = scaler_age.transform(X_test[:,2].reshape(-1,1)).reshape(-1)
 
 my_ai=Sequential([
-    Dense(units=10,activation='relu',input_shape=[8]),
-    Dense(units=10,activation='relu'),
-    Dense(units=9,activation='relu'),
-    Dense(units=4,activation='softmax')
+    Dense(units=5,activation='relu',input_shape=[8]),
+    Dense(units=6,activation='relu'),
+    Dense(units=8,activation='relu'),
+    Dense(units=7,activation='softmax')
 ])
 
 my_ai.compile(optimizer='adam',
                  loss='categorical_crossentropy',
                  metrics=['accuracy'])
-     
+
 my_ai.fit(x=X_train_scaled,y=y_train,
              epochs=20,
              batch_size= 33,
              validation_data=(X_test_scaled,y_test),
              )
-     
+
 metrics = pd.DataFrame(my_ai.history.history)
 metrics.head()
 metrics[['loss','val_loss']].plot()
-     
+
 x_test_predictions = np.argmax(my_ai.predict(X_test_scaled), axis=1)
 x_test_predictions.shape
 y_test_truevalue = np.argmax(y_test,axis=1)
 y_test_truevalue.shape
-     
-print(confusion_matrix(y_test_truevalue,x_test_predictions))   
+
+print(confusion_matrix(y_test_truevalue,x_test_predictions))
 print(classification_report(y_test_truevalue,x_test_predictions))
-  
+
 x_single_prediction = np.argmax(my_ai.predict(X_test_scaled[1:2,:]), axis=1)
-     
+
 print(x_single_prediction)
 print(le.inverse_transform(x_single_prediction))
+
 ```
 
 ## Dataset Information:
 
-![image](https://github.com/anbuselvan1519/nn-classification/assets/139841744/15ed628d-8e86-4d06-b60e-c2d575d3c010)
+![307851948-97efb12c-6165-4c7f-85e6-78712d97705c](https://github.com/Afsarjumail/nn-classification/assets/118343395/9ae95dd3-5c3e-4f45-ad30-f18ee5e4dedf)
 
 ## OUTPUT:
 
+
 ### Training Loss, Validation Loss Vs Iteration Plot:
 
-![exp no 2](https://github.com/anbuselvan1519/nn-classification/assets/139841744/aa93ff94-f1c2-454b-8354-91b8c95f3755)
+![image](https://github.com/rakshadharanika/nn-classification/assets/149348380/4ad6ce19-3bd9-47d9-ba2c-762d8043e88d)
 
 ### Classification Report
 
-![Screenshot 2024-03-01 091923](https://github.com/anbuselvan1519/nn-classification/assets/139841744/d83bddfb-3db1-4977-a766-3e34b882e229)
+![Screenshot (75)](https://github.com/rakshadharanika/nn-classification/assets/149348380/372911bb-c184-47b9-aa96-d574221841cb)
 
 ### Confusion Matrix
+![Screenshot (76)](https://github.com/rakshadharanika/nn-classification/assets/149348380/30a6107c-fe6c-4ccc-ac3e-b5fb293398ba)
 
-![Screenshot 2024-03-01 091900](https://github.com/anbuselvan1519/nn-classification/assets/139841744/d39dcdb4-eded-4ae5-97f4-bab874c26243)
 
 ### New Sample Data Prediction
 
-![Screenshot 2024-03-01 091942](https://github.com/anbuselvan1519/nn-classification/assets/139841744/51a5e689-fb8c-40d8-aaf6-486e120edbdd)
+![Screenshot (77)](https://github.com/rakshadharanika/nn-classification/assets/149348380/c49a7f94-299e-465a-9d9e-4709f9b66e7d)
+
 
 ## RESULT
 A neural network classification model is developed for the given dataset.
