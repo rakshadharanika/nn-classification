@@ -12,6 +12,8 @@ You are required to help the manager to predict the right group of the new custo
 
 ## Neural Network Model:
 
+![Screenshot (71)](https://github.com/rakshadharanika/nn-classification/assets/149348380/5006c383-edde-4003-a923-0330c1cf0399)
+
 
 
 ## DESIGN STEPS:
