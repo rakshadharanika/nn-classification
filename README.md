@@ -157,10 +157,10 @@ X_train_scaled[:,2] = scaler_age.transform(X_train[:,2].reshape(-1,1)).reshape(-
 X_test_scaled[:,2] = scaler_age.transform(X_test[:,2].reshape(-1,1)).reshape(-1)
 
 my_ai=Sequential([
-    Dense(units=10,activation='relu',input_shape=[8]),
-    Dense(units=10,activation='relu'),
+    Dense(units=5,activation='relu',input_shape=[8]),
+    Dense(units=6,activation='relu'),
     Dense(units=8,activation='relu'),
-    Dense(units=4,activation='softmax')
+    Dense(units=7,activation='softmax')
 ])
 
 my_ai.compile(optimizer='adam',
